@@ -5,7 +5,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **int** |  | [optional] 
 **percent** | **int** |  | 
-**bitmap** | **str** |  | [optional] 
 **variant_key** | **str** |  | 
 **variant_id** | **int** |  | 
 

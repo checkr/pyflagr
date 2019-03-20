@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**delete_flag**](FlagApi.md#delete_flag) | **DELETE** /flags/{flagID} | 
 [**find_flags**](FlagApi.md#find_flags) | **GET** /flags | 
 [**get_flag**](FlagApi.md#get_flag) | **GET** /flags/{flagID} | 
+[**get_flag_entity_types**](FlagApi.md#get_flag_entity_types) | **GET** /flags/entity_types | 
 [**get_flag_snapshots**](FlagApi.md#get_flag_snapshots) | **GET** /flags/{flagID}/snapshots | 
 [**put_flag**](FlagApi.md#put_flag) | **PUT** /flags/{flagID} | 
 [**set_flag_enabled**](FlagApi.md#set_flag_enabled) | **PUT** /flags/{flagID}/enabled | 
@@ -103,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **find_flags**
-> list[Flag] find_flags()
+> list[Flag] find_flags(limit=limit, enabled=enabled, description=description, description_like=description_like, key=key, offset=offset, preload=preload)
 
 
 
@@ -117,16 +118,32 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = flagr.FlagApi()
+limit = 789 # int | the numbers of flags to return (optional)
+enabled = true # bool | return flags having given enabled status (optional)
+description = 'description_example' # str | return flags exactly matching given description (optional)
+description_like = 'description_like_example' # str | return flags partially matching given description (optional)
+key = 'key_example' # str | return flags matching given key (optional)
+offset = 789 # int | return flags given the offset, it should usually set together with limit (optional)
+preload = true # bool | return flags with preloaded segments and variants (optional)
 
 try:
-    api_response = api_instance.find_flags()
+    api_response = api_instance.find_flags(limit=limit, enabled=enabled, description=description, description_like=description_like, key=key, offset=offset, preload=preload)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FlagApi->find_flags: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **limit** | **int**| the numbers of flags to return | [optional] 
+ **enabled** | **bool**| return flags having given enabled status | [optional] 
+ **description** | **str**| return flags exactly matching given description | [optional] 
+ **description_like** | **str**| return flags partially matching given description | [optional] 
+ **key** | **str**| return flags matching given key | [optional] 
+ **offset** | **int**| return flags given the offset, it should usually set together with limit | [optional] 
+ **preload** | **bool**| return flags with preloaded segments and variants | [optional] 
 
 ### Return type
 
@@ -176,6 +193,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**Flag**](Flag.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_flag_entity_types**
+> list[str] get_flag_entity_types()
+
+
+
+### Example
+```python
+from __future__ import print_function
+import time
+import flagr
+from flagr.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = flagr.FlagApi()
+
+try:
+    api_response = api_instance.get_flag_entity_types()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FlagApi->get_flag_entity_types: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**list[str]**
 
 ### Authorization
 
