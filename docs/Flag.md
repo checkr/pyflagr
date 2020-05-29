@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **variants** | [**list[Variant]**](Variant.md) |  | [optional] 
 **data_records_enabled** | **bool** | enabled data records will get data logging in the metrics pipeline, for example, kafka. | 
 **entity_type** | **str** | it will override the entityType in the evaluation logs if it&#39;s not empty | [optional] 
+**notes** | **str** | flag usage details in markdown format | [optional] 
 **created_by** | **str** |  | [optional] 
 **updated_by** | **str** |  | [optional] 
 **updated_at** | **datetime** |  | [optional] 
