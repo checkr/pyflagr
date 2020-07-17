@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **entity_type** | **str** | it will overwrite entityType into evaluation logs if it&#39;s not empty | [optional] 
 **enabled** | **bool** |  | [optional] 
 **key** | **str** |  | [optional] 
+**notes** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

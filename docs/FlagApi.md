@@ -104,7 +104,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **find_flags**
-> list[Flag] find_flags(limit=limit, enabled=enabled, description=description, description_like=description_like, key=key, offset=offset, preload=preload)
+> list[Flag] find_flags(limit=limit, enabled=enabled, description=description, tags=tags, description_like=description_like, key=key, offset=offset, preload=preload)
 
 
 
@@ -121,13 +121,14 @@ api_instance = flagr.FlagApi()
 limit = 789 # int | the numbers of flags to return (optional)
 enabled = true # bool | return flags having given enabled status (optional)
 description = 'description_example' # str | return flags exactly matching given description (optional)
+tags = 'tags_example' # str | return flags with the given tags (comma separated) (optional)
 description_like = 'description_like_example' # str | return flags partially matching given description (optional)
 key = 'key_example' # str | return flags matching given key (optional)
 offset = 789 # int | return flags given the offset, it should usually set together with limit (optional)
 preload = true # bool | return flags with preloaded segments and variants (optional)
 
 try:
-    api_response = api_instance.find_flags(limit=limit, enabled=enabled, description=description, description_like=description_like, key=key, offset=offset, preload=preload)
+    api_response = api_instance.find_flags(limit=limit, enabled=enabled, description=description, tags=tags, description_like=description_like, key=key, offset=offset, preload=preload)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling FlagApi->find_flags: %s\n" % e)
@@ -140,6 +141,7 @@ Name | Type | Description  | Notes
  **limit** | **int**| the numbers of flags to return | [optional] 
  **enabled** | **bool**| return flags having given enabled status | [optional] 
  **description** | **str**| return flags exactly matching given description | [optional] 
+ **tags** | **str**| return flags with the given tags (comma separated) | [optional] 
  **description_like** | **str**| return flags partially matching given description | [optional] 
  **key** | **str**| return flags matching given key | [optional] 
  **offset** | **int**| return flags given the offset, it should usually set together with limit | [optional] 

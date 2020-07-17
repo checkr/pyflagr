@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **get_health**
-> get_health()
+> Health get_health()
 
 
 
@@ -26,7 +26,8 @@ from pprint import pprint
 api_instance = flagr.HealthApi()
 
 try:
-    api_instance.get_health()
+    api_response = api_instance.get_health()
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling HealthApi->get_health: %s\n" % e)
 ```
@@ -36,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-void (empty response body)
+[**Health**](Health.md)
 
 ### Authorization
 
