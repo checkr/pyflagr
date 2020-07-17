@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **key** | **str** | unique key representation of the flag | [optional] 
 **description** | **str** |  | 
 **enabled** | **bool** |  | 
+**tags** | [**list[Tag]**](Tag.md) |  | [optional] 
 **segments** | [**list[Segment]**](Segment.md) |  | [optional] 
 **variants** | [**list[Variant]**](Variant.md) |  | [optional] 
 **data_records_enabled** | **bool** | enabled data records will get data logging in the metrics pipeline, for example, kafka. | 

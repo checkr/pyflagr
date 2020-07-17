@@ -52,7 +52,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_export_sqlite**
-> file get_export_sqlite()
+> file get_export_sqlite(exclude_snapshots=exclude_snapshots)
 
 
 
@@ -68,16 +68,20 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = flagr.ExportApi()
+exclude_snapshots = true # bool | export without snapshots data - useful for smaller db without snapshots  (optional)
 
 try:
-    api_response = api_instance.get_export_sqlite()
+    api_response = api_instance.get_export_sqlite(exclude_snapshots=exclude_snapshots)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExportApi->get_export_sqlite: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **exclude_snapshots** | **bool**| export without snapshots data - useful for smaller db without snapshots  | [optional] 
 
 ### Return type
 
